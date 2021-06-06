@@ -15,10 +15,10 @@ const NavBar = (props) => {
             </div>
             <div className="model-creations">
                 <div className="new-collection">
-                    <p><i class="fas fa-plus-circle"></i> new collection</p>
+                    <p><a href={props.createCollection} ><i class="fas fa-plus-circle"></i></a> new collection</p>
                 </div>
                 <div className="create-flashcard">
-                    <p><i class="fas fa-plus-circle"></i> create flashcard</p>
+                    <p><a href={props.createFlashcard}><i class="fas fa-plus-circle"></i></a> create flashcard</p>
                 </div>
             </div>
             <div className="collections-header">

@@ -41,6 +41,14 @@
     padding-bottom: 15px;
 }
 
+.new-collection i {
+    color: rgb(61, 61, 246);
+}
+
+.create-flashcard i{
+    color: rgb(61, 61, 246);
+}
+
 .collections-header {
     padding-top: 10px;
     padding-bottom: 3px;
