@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import NavBar from './NavBar/navBar';
 
 class App extends Component{
     constructor(props) {
