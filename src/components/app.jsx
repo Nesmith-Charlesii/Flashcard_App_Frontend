@@ -1,21 +1,32 @@
-import React, {useState} from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
 
-const App = () => {
-
-    const [collections, setCollections] = useState([])
-
-    const getAllCollections = async(e) => {
-        let {data} = await axios.get(`http://127.0.0.1:8000/flashcard_app/api/collections/`)
-        console.log(data)
-        setCollections({collections: data})
+class App extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            collections: []
+        }
     }
 
-    return(
-        <div className="container-fluid row">
-            <button onClick={(e) => getAllCollections(e)}>Collections</button>
-        </div>
-    )
+    getAllCollections = async() => {
+        try {
+            let {data} = await axios.get(`http://127.0.0.1:8000/flashcard_app/api/collections/`)
+            console.log(data)
+            this.setState({collections:data})
+        }
+        catch(error) {
+            alert(`Whoops! ${error}. Looks like we're having some technical difficulties.Try again later!`)
+        }
+    }
+
+    render() {
+        return(
+            <div className="container-fluid row">
+                <button onClick={(e) => this.getAllCollections(e)}>Collections</button>
+            </div>
+        )
+    }
 }
 
 export default App;
