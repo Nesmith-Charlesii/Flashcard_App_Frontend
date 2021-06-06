@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import NavBar from './NavBar/navBar';
+import 'bootstrap/dist/css/bootstrap.css';
+import './app.css';
 
 class App extends Component{
     constructor(props) {
@@ -24,14 +26,9 @@ class App extends Component{
     render() {
         return(
             <div className="container-fluid row">
-                <button onClick={(e) => this.getAllCollections(e)}>Collections</button>
-                <ul>
-                    {this.state.collections.map((collection) => {
-                        return(
-                            <li key={collection.id}>{collection.title}</li>
-                        )
-                    })}
-                </ul>
+                <div className="side-nav">
+                    <NavBar />
+                </div>
             </div>
         )
     }
