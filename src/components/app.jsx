@@ -24,6 +24,13 @@ class App extends Component{
         return(
             <div className="container-fluid row">
                 <button onClick={(e) => this.getAllCollections(e)}>Collections</button>
+                <ul>
+                    {this.state.collections.map((collection) => {
+                        return(
+                            <li key={collection.id}>{collection.title}</li>
+                        )
+                    })}
+                </ul>
             </div>
         )
     }
