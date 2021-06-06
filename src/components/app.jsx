@@ -1,20 +1,21 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
+import axios from 'axios';
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+const App = () => {
 
-        }
+    const [collections, setCollections] = useState([])
+
+    const getAllCollections = async(e) => {
+        let {data} = await axios.get(`http://127.0.0.1:8000/flashcard_app/api/collections/`)
+        console.log(data)
+        setCollections({collections: data})
     }
 
-    render() {
-        return (
-            <div className="container-fluid">
-                <h1>TEST</h1>
-            </div>
-        )
-    }
+    return(
+        <div className="container-fluid row">
+            <button onClick={(e) => getAllCollections(e)}>Collections</button>
+        </div>
+    )
 }
 
 export default App;
