@@ -1,0 +1,16 @@
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+    overflow: hidden;
+    height: 100vh;
+    background-image: linear-gradient(to bottom right, rgb(250, 40, 125), rgb(240, 215, 0));
+}
+
+.nav-wrapper {
+    width: 280px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(40, 40, 40);
+}
+

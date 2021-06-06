@@ -25,8 +25,8 @@ class App extends Component{
 
     render() {
         return(
-            <div className="container-fluid row">
-                <div className="side-nav">
+            <div className="container-fluid">
+                <div className="nav-wrapper">
                     <NavBar />
                 </div>
             </div>

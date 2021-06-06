@@ -1,26 +1,28 @@
 import React from 'react';
+import './navBar.css';
+import './fontawesome/css/all.min.css';
 
 const NavBar = (props) => {
     return (
-        <nav>
-            <div className="page-direct d-flex flex-row">
+        <nav className="nav-container">
+            <div className="page-direct">
                 <div className="return">
-                    <p>Return</p>
+                    <p><i class="fas fa-arrow-circle-left fa-2x"></i></p>
                 </div>
                 <div className="home">
-                    <p>Home Icon</p>
+                    <p><i class="fas fa-home fa-2x"></i></p>
                 </div>
             </div>
             <div className="model-creations">
                 <div className="new-collection">
-                    <p>new collection</p>
+                    <p><i class="fas fa-plus-circle"></i> new collection</p>
                 </div>
                 <div className="create-flashcard">
-                    <p>create flashcard</p>
+                    <p><i class="fas fa-plus-circle"></i> create flashcard</p>
                 </div>
             </div>
-            <div className="collections">
-                <h3>Collections</h3>
+            <div className="collections-header">
+                <h3>collections</h3>
             </div>
         </nav>
     )
