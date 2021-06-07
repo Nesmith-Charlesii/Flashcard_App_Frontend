@@ -59,9 +59,14 @@ class App extends Component{
         }
     }
 
-    renderAction = () => {
-        console.log('changing render type to collection form')
-        this.setState({renderType: "collection form"})
+    renderAction = (renderType) => {
+        if(renderType === "collection form") {
+            this.setState({renderType: "collection form"})
+        } else if(renderType === "flashcard form") {
+            this.setState({renderType: "flashcard form"})
+        }
+        // console.log('changing render type to collection form')
+        // this.setState({renderType: "collection form"})
     }
 
     render() {
@@ -69,7 +74,7 @@ class App extends Component{
             return(
                 <div className="container-fluid">
                     <div className="nav-wrapper">
-                        <NavBar collections={this.state.collections} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} createCollection={() => this.renderAction()} />
+                        <NavBar collections={this.state.collections} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} createCollection={() => this.renderAction("collection form")}  createFlashcard={() => this.renderAction("flashcard form")}/>
                     </div>
                     <div className="flashcard-display-wrapper">
                         <FlashcardDisplay flashcards={this.state.flashcards} />
@@ -80,7 +85,7 @@ class App extends Component{
             return(
                 <div className="container-fluid" id="collectionForm">
                     <div className="nav-wrapper">
-                        <NavBar collections={this.state.collections} createCollection={() => this.state.renderAction()}/>
+                        <NavBar collections={this.state.collections} createCollection={() => this.state.renderAction("collection form")} createFlashcard={() => this.renderAction("flashcard form")}/>
                     </div>
                     <div className="form-wrapper">
                         <CollectionForm postCollection={(title) => this.postCollection(title)} />
@@ -91,7 +96,7 @@ class App extends Component{
             return(
                 <div className="container-fluid" id="flashcardForm">
                     <div className="nav-wrapper">
-                        <NavBar collections={this.state.collections} createCollection={() => this.state.renderAction()}/>
+                        <NavBar collections={this.state.collections} createCollection={() => this.state.renderAction("collection form")} createFlashcard={() => this.renderAction("flashcard form")}/>
                     </div>
                     <div className="form-wrapper">
                         <FlashcardForm postFlashcard={(flashcard) => this.postCollection(flashcard)} />
