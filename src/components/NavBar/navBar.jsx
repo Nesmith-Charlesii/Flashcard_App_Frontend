@@ -28,7 +28,7 @@ const NavBar = (props) => {
                 <ul>
                     {props.collections.map(collection => {
                         return(
-                            <li key={collection.id}><a id="item-link" href={collection.id}>{collection.title}</a></li>
+                            <li key={collection.id}><button onClick={() => props.getFlashcards(collection.id)}>{collection.title}</button></li>
                         )
                     })}
                 </ul>

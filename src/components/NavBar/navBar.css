@@ -63,10 +63,6 @@
 }
 
 .collections li {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    letter-spacing: 1px;
-    color:  rgb(180, 180, 180);
     list-style: none;
     padding-bottom: 10px;
 }
@@ -75,3 +71,13 @@
     text-decoration: none;
 }
 
+button {
+    background-color: transparent;
+    border: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color:  rgb(180, 180, 180);
+    list-style: none;
+    padding-bottom: 10px;
+}

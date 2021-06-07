@@ -10,6 +10,7 @@ class App extends Component{
         super(props);
         this.state = {
             collections: [],
+            collection_id: 1,
             flashcards: [],
             renderType: "home"
         }
@@ -17,6 +18,7 @@ class App extends Component{
 
     componentDidMount() {
         this.getAllCollections()
+        this.getCollectionFlashcards(1)
     }
 
     getAllCollections = async() => {
@@ -31,9 +33,11 @@ class App extends Component{
     }
 
     getCollectionFlashcards = async(collection_id) => {
+        console.log('getting flashcards')
         try {
             let {data} = await axios.get(`http://127.0.0.1:8000/flashcard_app/api/collection/${collection_id}/flashcards/`)
             this.setState({flashcards: data})
+            console.log(this.state.flashcards)
         }
         catch(error) {
             alert(`Whoops! ${error}. Looks like we're having some technical difficulties.Try again later!`)
@@ -45,7 +49,7 @@ class App extends Component{
             return(
                 <div className="container-fluid">
                     <div className="nav-wrapper">
-                        <NavBar collections={this.state.collections}  />
+                        <NavBar collections={this.state.collections} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} />
                     </div>
                     {/* <div className="form-wrapper">
                         <CollectionForm />
