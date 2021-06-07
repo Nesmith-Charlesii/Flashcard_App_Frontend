@@ -46,9 +46,10 @@ class App extends Component{
     }
 
     postCollection = async(title) => {
+        console.log(title)
         try {
             let {data} = await axios.post('http://127.0.0.1:8000/flashcard_app/api/collections/', title)
-            console.log(data)
+            console.log('title', data)
             this.setState({collections: [...this.state.collections, data]})
             console.log(this.state.collections);
         }

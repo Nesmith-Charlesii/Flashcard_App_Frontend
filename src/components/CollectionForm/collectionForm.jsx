@@ -5,8 +5,11 @@ import './collectionForm.css';
 const CollectionForm = (props) => {
 
     const Submittal = () => {
-        props.postCollection(inputs.title)
-        console.log(inputs.title)
+        const title = {
+            title: inputs.title
+        }
+        props.postCollection(title)
+        console.log(title)
     }
 
     const {inputs, handleChange, handleSubmit} = useCollectionForm(Submittal);
