@@ -45,9 +45,9 @@ class App extends Component{
         }
     }
 
-    postCollection = async() => {
+    postCollection = async(title) => {
         try {
-            let {data} = await axios.post(`http://127.0.0.1:8000/flashcard_app/api/collections/`)
+            let {data} = await axios.post('http://127.0.0.1:8000/flashcard_app/api/collections/', title)
             console.log(data)
             this.setState({collections: [...this.state.collections, data]})
             console.log(this.state.collections);
@@ -81,7 +81,7 @@ class App extends Component{
                         <NavBar collections={this.state.collections} createCollection={() => this.state.renderAction()}/>
                     </div>
                     <div className="form-wrapper">
-                        <CollectionForm />
+                        <CollectionForm postCollection={(title) => this.postCollection(title)} />
                     </div>
                 </div>
             )
