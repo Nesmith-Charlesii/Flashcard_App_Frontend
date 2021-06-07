@@ -45,6 +45,18 @@ class App extends Component{
         }
     }
 
+    postCollection = async() => {
+        try {
+            let {data} = await axios.post(`http://127.0.0.1:8000/flashcard_app/api/collections/`)
+            console.log(data)
+            this.setState({collections: [...this.state.collections, data]})
+            console.log(this.state.collections);
+        }
+        catch(error) {
+            alert(`Whoops! ${error}. Looks like we're having some technical difficulties.Try again later!`)
+        }
+    }
+
     renderAction = () => {
         console.log('changing render type to collection form')
         this.setState({renderType: "collection form"})
@@ -64,9 +76,9 @@ class App extends Component{
             )
         } else if(this.state.renderType === "collection form") {
             return(
-                <div className="container-fluid">
+                <div className="container-fluid" id="collectionForm">
                     <div className="nav-wrapper">
-                        <NavBar collections={this.state.collections} createCollection0={() => this.state.renderAction()}/>
+                        <NavBar collections={this.state.collections} createCollection={() => this.state.renderAction()}/>
                     </div>
                     <div className="form-wrapper">
                         <CollectionForm />

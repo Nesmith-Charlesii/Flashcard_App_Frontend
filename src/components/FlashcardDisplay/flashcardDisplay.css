@@ -12,10 +12,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px inset white;
+    border: 1px solid white;
     border-radius: 10%;
-    box-shadow: 10px 6px 12px rgb(80, 80, 140);
-    background-color: rgb(80, 20, 255);
+    box-shadow: 10px 6px 12px rgb(50, 50, 50);
+    background-color: rgb(60, 12, 180);
     width: 250px;
     height: 320px;
 }

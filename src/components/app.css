@@ -3,8 +3,13 @@
     padding-left: 0px;
     overflow: hidden;
     height: 100vh;
-    background-image: linear-gradient(to bottom right, rgb(250, 40, 125), rgb(240, 215, 0));
     display:flex;
+    /* background-image: linear-gradient(to bottom right, rgb(255, 50, 10), rgb(255, 180, 20)); */
+    background-image:linear-gradient(to bottom right, rgb(238, 40, 57), rgb(219, 233, 28));
+}
+
+#collectionForm {
+    background-image: linear-gradient(to bottom right, rgb(250, 40, 125), rgb(80, 20, 255));
 }
 
 .nav-wrapper {
@@ -25,7 +30,9 @@
 }
 
 .form-wrapper {
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 

@@ -1,10 +1,11 @@
 import React from 'react';
 import useCollectionForm from '../CustomHooks/useCollectionForm';
+import './collectionForm.css';
 
 const CollectionForm = (props) => {
 
     const Submittal = () => {
-        // props.getCollectionFlashcards()
+        props.postCollection()
         console.log(inputs.title)
     }
 
@@ -14,10 +15,9 @@ const CollectionForm = (props) => {
         <div className="collectionForm">
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label htmlFor="title">Title of Collection</label>
-                    <input className="form-control" type="text" name="title" onChange={handleChange} value={inputs.title}/>
-                    <br/>
-                    <button className="btn btn-sm btn-primary">Create Collection</button>
+                    <label htmlFor="title">name your collection</label>
+                    <input className="form-control my-4" type="text" name="title" onChange={handleChange} value={inputs.title}/>
+                    <button className="btn btn-primary" id="collection-button">Create Collection</button>
                 </div>
             </form>
         </div>
