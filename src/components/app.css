@@ -15,6 +15,11 @@
     background-color: rgb(40, 40, 40);
 }
 
+.flashcard-display-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
 .form-wrapper {
     display: flex;
     align-items: center;

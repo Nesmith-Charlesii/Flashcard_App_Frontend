@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import NavBar from './NavBar/navBar';
 import CollectionForm from './CollectionForm/collectionForm';
+import FlashcardDisplay from './FlashcardDisplay/flashcardDisplay';
 import 'bootstrap/dist/css/bootstrap.css';
 import './app.css';
 
@@ -50,6 +51,9 @@ class App extends Component{
                 <div className="container-fluid">
                     <div className="nav-wrapper">
                         <NavBar collections={this.state.collections} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} />
+                    </div>
+                    <div className="flashcard-display-wrapper">
+                        <FlashcardDisplay flashcards={this.state.flashcards} />
                     </div>
                     {/* <div className="form-wrapper">
                         <CollectionForm />

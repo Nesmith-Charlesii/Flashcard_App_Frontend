@@ -5,7 +5,7 @@ const FlashcardDisplay = (props) => {
         <div className="card-display">
             {props.flashcards.map(flashcard => {
                 return (
-                    <div className="flashcard">
+                    <div className="flashcard" key={flashcard.id}>
                         <div className="flash-question">
                             <p>{flashcard.question}</p>
                         </div>
