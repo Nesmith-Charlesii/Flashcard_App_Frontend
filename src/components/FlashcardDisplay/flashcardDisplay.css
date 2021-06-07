@@ -2,6 +2,7 @@
     padding: 50px;
     width: 100%;
     display: grid;
+    /*auto-fill will fill each empty spot so cards stack evenly beside one another*/
     grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
     grid-gap: 30px;
 }

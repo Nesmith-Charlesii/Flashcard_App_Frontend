@@ -18,12 +18,17 @@
 .return i {
     color: rgb(255, 30, 60);
     margin-right: 30px;
+    text-shadow: 7px 6px 12px rgb(5, 5, 5);
 }
 
 .home i {
-    color: rgb(180, 180, 180);
+    color: rgb(240, 215, 0); 
+    text-shadow: 7px 6px 12px rgb(5, 5, 5);
 }
 
+.home i:hover {
+    color: rgb(0, 255, 100);
+}
 
 .model-creations {
     border-bottom: 1px solid rgb(180, 180, 180);
@@ -39,6 +44,11 @@
 .new-collection {
     padding-top: 12px;
     padding-bottom: 15px;
+    text-shadow: 5px 5px 8px rgb(0, 0, 0);
+}
+
+.create-flashcard {
+    text-shadow: 5px 5px 8px rgb(0, 0, 0);
 }
 
 .new-collection i {
@@ -62,6 +72,10 @@
     border-bottom: 1px solid rgb(180, 180, 180);
 }
 
+.collections-header h3 {
+    text-shadow: 3px 3px 6px rgb(0, 0, 0);
+}
+
 .collections li {
     list-style: none;
     padding-bottom: 10px;
@@ -80,4 +94,13 @@ button {
     color:  rgb(180, 180, 180);
     list-style: none;
     padding-bottom: 10px;
+    text-shadow: 5px 5px 8px rgb(0, 0, 0);
+}
+
+button:hover {
+    color: rgb(0, 255, 100);
+}
+
+button:focus {
+    color: rgb(0, 255, 100);
 }
