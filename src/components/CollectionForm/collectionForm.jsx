@@ -4,7 +4,8 @@ import useCollectionForm from '../CustomHooks/useCollectionForm';
 const CollectionForm = (props) => {
 
     const Submittal = () => {
-        props.getAllCollections()
+        // props.getCollectionFlashcards()
+        console.log(inputs.title)
     }
 
     const {inputs, handleChange, handleSubmit} = useCollectionForm(Submittal);
@@ -14,7 +15,8 @@ const CollectionForm = (props) => {
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="title">Title of Collection</label>
-                    <input className="form-control" type="text" name="title" onChange={handleChange} value={inputs.search}/>
+                    <input className="form-control" type="text" name="title" onChange={handleChange} value={inputs.title}/>
+                    <br/>
                     <button className="btn btn-sm btn-primary">Create Collection</button>
                 </div>
             </form>

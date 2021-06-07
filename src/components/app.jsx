@@ -10,8 +10,13 @@ class App extends Component{
         super(props);
         this.state = {
             collections: [],
+            flashcards: [],
             renderType: "home"
         }
+    }
+
+    componentDidMount() {
+        this.getAllCollections()
     }
 
     getAllCollections = async() => {
@@ -25,16 +30,26 @@ class App extends Component{
         }
     }
 
+    getCollectionFlashcards = async(collection_id) => {
+        try {
+            let {data} = await axios.get(`http://127.0.0.1:8000/flashcard_app/api/collection/${collection_id}/flashcards/`)
+            this.setState({flashcards: data})
+        }
+        catch(error) {
+            alert(`Whoops! ${error}. Looks like we're having some technical difficulties.Try again later!`)
+        }
+    }
+
     render() {
         if(this.state.renderType === "home"){
             return(
                 <div className="container-fluid">
                     <div className="nav-wrapper">
-                        <NavBar/>
+                        <NavBar collections={this.state.collections}  />
                     </div>
-                    <div className="form-wrapper">
+                    {/* <div className="form-wrapper">
                         <CollectionForm />
-                    </div>
+                    </div> */}
                 </div>
             )
         } else if(this.state.renderType === "collection form") {
