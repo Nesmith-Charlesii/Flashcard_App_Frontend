@@ -4,6 +4,7 @@
     overflow: hidden;
     height: 100vh;
     background-image: linear-gradient(to bottom right, rgb(250, 40, 125), rgb(240, 215, 0));
+    display:flex;
 }
 
 .nav-wrapper {

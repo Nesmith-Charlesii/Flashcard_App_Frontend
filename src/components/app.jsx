@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import NavBar from './NavBar/navBar';
+import CollectionForm from './CollectionForm/collectionForm';
 import 'bootstrap/dist/css/bootstrap.css';
 import './app.css';
 
@@ -8,7 +9,8 @@ class App extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            collections: []
+            collections: [],
+            renderType: "home"
         }
     }
 
@@ -24,13 +26,29 @@ class App extends Component{
     }
 
     render() {
-        return(
-            <div className="container-fluid">
-                <div className="nav-wrapper">
-                    <NavBar />
+        if(this.state.renderType === "home"){
+            return(
+                <div className="container-fluid">
+                    <div className="nav-wrapper">
+                        <NavBar/>
+                    </div>
+                    <div className="form-wrapper">
+                        <CollectionForm />
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        } else if(this.state.renderType === "collection form") {
+            return(
+                <div className="container-fluid">
+                    <div className="nav-wrapper">
+                        <NavBar/>
+                    </div>
+                    <div className="form-wrapper">
+                        <CollectionForm />
+                    </div>
+                </div>
+            )
+        }
     }
 }
 

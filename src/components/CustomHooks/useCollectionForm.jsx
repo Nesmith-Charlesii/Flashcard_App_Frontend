@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-const useSearchForm = (callback) => {
+const useCollectionForm = (callback) => {
     const [inputs, setInputs] = useState({});
     
     const handleChange = (event) => {
@@ -21,4 +21,4 @@ const useSearchForm = (callback) => {
     }
 }
 
-export default useSearchForm;
+export default useCollectionForm;
