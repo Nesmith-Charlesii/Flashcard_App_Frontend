@@ -1,8 +1,9 @@
 import React from 'react';
+import './flashcardDisplay.css';
 
 const FlashcardDisplay = (props) => {
     return (
-        <div className="card-display">
+        <div className="card-display my-3">
             {props.flashcards.map(flashcard => {
                 return (
                     <div className="flashcard" key={flashcard.id}>

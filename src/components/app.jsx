@@ -55,9 +55,6 @@ class App extends Component{
                     <div className="flashcard-display-wrapper">
                         <FlashcardDisplay flashcards={this.state.flashcards} />
                     </div>
-                    {/* <div className="form-wrapper">
-                        <CollectionForm />
-                    </div> */}
                 </div>
             )
         } else if(this.state.renderType === "collection form") {
