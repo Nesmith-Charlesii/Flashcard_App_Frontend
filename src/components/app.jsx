@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import NavBar from './NavBar/navBar';
 import CollectionForm from './CollectionForm/collectionForm';
+import FlashcardForm from './FlashcardForm/flashcardForm';
 import FlashcardDisplay from './FlashcardDisplay/flashcardDisplay';
 import 'bootstrap/dist/css/bootstrap.css';
 import './app.css';
@@ -83,6 +84,17 @@ class App extends Component{
                     </div>
                     <div className="form-wrapper">
                         <CollectionForm postCollection={(title) => this.postCollection(title)} />
+                    </div>
+                </div>
+            )
+        } else if(this.state.renderType === "flashcard form") {
+            return(
+                <div className="container-fluid" id="flashcardForm">
+                    <div className="nav-wrapper">
+                        <NavBar collections={this.state.collections} createCollection={() => this.state.renderAction()}/>
+                    </div>
+                    <div className="form-wrapper">
+                        <FlashcardForm postFlashcard={(flashcard) => this.postCollection(flashcard)} />
                     </div>
                 </div>
             )
