@@ -45,12 +45,17 @@ class App extends Component{
         }
     }
 
+    renderAction = () => {
+        console.log('changing render type to collection form')
+        this.setState({renderType: "collection form"})
+    }
+
     render() {
         if(this.state.renderType === "home"){
             return(
                 <div className="container-fluid">
                     <div className="nav-wrapper">
-                        <NavBar collections={this.state.collections} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} />
+                        <NavBar collections={this.state.collections} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} createCollection={() => this.renderAction()} />
                     </div>
                     <div className="flashcard-display-wrapper">
                         <FlashcardDisplay flashcards={this.state.flashcards} />
@@ -61,7 +66,7 @@ class App extends Component{
             return(
                 <div className="container-fluid">
                     <div className="nav-wrapper">
-                        <NavBar/>
+                        <NavBar collections={this.state.collections} createCollection0={() => this.state.renderAction()}/>
                     </div>
                     <div className="form-wrapper">
                         <CollectionForm />

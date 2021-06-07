@@ -98,9 +98,11 @@ button {
 }
 
 button:hover {
-    color: rgb(0, 255, 100);
+    /* color: rgb(0, 255, 100); */
+    color: yellow;
 }
 
 button:focus {
-    color: rgb(0, 255, 100);
+    /* color: rgb(0, 255, 100); */
+    color: yellow;
 }

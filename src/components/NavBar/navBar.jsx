@@ -15,10 +15,10 @@ const NavBar = (props) => {
             </div>
             <div className="model-creations">
                 <div className="new-collection">
-                    <p><a href={props.createCollection} ><i className="fas fa-plus-circle"></i></a> new collection</p>
+                    <p><button onClick={() => props.createCollection()} ><i className="fas fa-plus-circle"></i></button> new collection</p>
                 </div>
                 <div className="create-flashcard">
-                    <p><a href={props.createFlashcard}><i className="fas fa-plus-circle"></i></a> create flashcard</p>
+                    <p><button onClick={() => props.createFlashcard()}><i className="fas fa-plus-circle"></i></button> create flashcard</p>
                 </div>
             </div>
             <div className="collections-header">
