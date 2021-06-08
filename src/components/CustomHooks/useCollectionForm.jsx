@@ -1,7 +1,7 @@
 import {useState} from 'react';
 
 const useCollectionForm = (callback) => {
-    const [inputs, setInputs] = useState({});
+    const [inputs, setInputs] = useState({})
     
     const handleChange = (event) => {
         event.persist();
