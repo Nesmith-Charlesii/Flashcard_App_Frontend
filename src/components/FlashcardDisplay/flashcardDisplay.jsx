@@ -10,6 +10,9 @@ const FlashcardDisplay = (props) => {
                         <div className="flash-question">
                             <p>{flashcard.question}</p>
                         </div>
+                        <div className="editButton">
+                            <button><a href="/#">Edit</a></button>
+                        </div>
                         <div className="flash-answer">
                             <p>{flashcard.answer}</p>
                         </div>
