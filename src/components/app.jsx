@@ -60,9 +60,9 @@ class App extends Component{
     }
 
     postFlashcard = async(flashcard) => {
-        console.log('flashcard', flashcard)
+        console.log('post flashcard execute', flashcard)
         try {
-            let {data} = await axios.post('http://127.0.0.1:8000/flashcard_app/api/collections/', flashcard)
+            let {data} = await axios.post('http://127.0.0.1:8000/flashcard_app/api/collection/1/flashcards/', flashcard)
             console.log('flashcard', data)
             this.setState({flashcards: [...this.state.flashcards, data]})
             console.log(this.state.flashcards);

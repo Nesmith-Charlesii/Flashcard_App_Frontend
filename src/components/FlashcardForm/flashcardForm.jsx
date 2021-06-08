@@ -7,10 +7,12 @@ const FlashcardForm = (props) => {
     const Submittal = () => {
         const flashcard = {
             question: inputs.question,
-            answer: inputs.answer
+            answer: inputs.answer,
+            collection: inputs.collectionId
         }
+        console.log(flashcard.collection)
         props.postFlashcard(flashcard)
-        console.log('post flashcard', flashcard)
+        
     }
 
     const {inputs, handleChange, handleSubmit} = useCollectionForm(Submittal);
@@ -19,22 +21,23 @@ const FlashcardForm = (props) => {
         <div className="flashcardForm">
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label htmlFor="question">Card Question</label>
+                    <h4>Card Question</h4>
                     <textarea className="form-control my-4" type="text" name="question" onChange={handleChange} value={inputs.question}/>
-                    <label htmlFor="answer">Card Answer</label>
+                    <h4>Card Answer</h4>
                     <textarea className="form-control my-4" type="text" name="answer" onChange={handleChange} value={inputs.answer}/>
+                    <br/>
                     <div className="select-collection">
-                        <label htmlFor="answer">Assign to Collection</label>
+                        <h4>Assign to Collection</h4>
                         <br/>
-                        <select className="btn btn-sm btn-secondary" name="collection">
+                        <select onChange={handleChange} name="collection">
                             {props.collections.map(collection => {
                                 return(
-                                    <option key={collection.id}>{collection.title}</option>
+                                    <option key={collection.id}  value={inputs.collectionId=collection.id}>{collection.title}</option>
                                 )
                             })}
                         </select>
                     </div>
-                    {/* <input className="form-control my-4" type="text" name="answer" onChange={handleChange} value={inputs.answer}/> */}
+                    <br/>
                     <button className="btn btn-primary my-4" id="flashcard-button">Create Flashcard</button>
                 </div>
             </form>

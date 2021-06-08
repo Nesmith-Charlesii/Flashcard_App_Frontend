@@ -18,7 +18,7 @@ const CollectionForm = (props) => {
         <div className="collectionForm">
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label htmlFor="title">name your collection</label>
+                    <label htmlFor="title" id="collection-title">name your collection</label>
                     <input className="form-control my-4" type="text" name="title" onChange={handleChange} value={inputs.title}/>
                     <button className="btn btn-primary" id="collection-button">Create Collection</button>
                 </div>
