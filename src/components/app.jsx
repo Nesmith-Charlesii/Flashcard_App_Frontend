@@ -59,6 +59,19 @@ class App extends Component{
         }
     }
 
+    postFlashcard = async(flashcard) => {
+        console.log('flashcard', flashcard)
+        try {
+            let {data} = await axios.post('http://127.0.0.1:8000/flashcard_app/api/collections/', flashcard)
+            console.log('flashcard', data)
+            this.setState({flashcards: [...this.state.flashcards, data]})
+            console.log(this.state.flashcards);
+        }
+        catch(error) {
+            alert(`Whoops! ${error}. Looks like we're having some technical difficulties.Try again later!`)
+        }
+    }
+
     renderAction = (renderType) => {
         if(renderType === "collection form") {
             this.setState({renderType: "collection form"})
@@ -85,9 +98,9 @@ class App extends Component{
             return(
                 <div className="container-fluid" id="collectionForm">
                     <div className="nav-wrapper">
-                        <NavBar collections={this.state.collections} createCollection={() => this.state.renderAction("collection form")} createFlashcard={() => this.renderAction("flashcard form")}/>
+                        <NavBar collections={this.state.collections} createCollection={() => this.renderAction("collection form")} createFlashcard={() => this.renderAction("flashcard form")}/>
                     </div>
-                    <div className="form-wrapper">
+                    <div className="collection-form-wrapper">
                         <CollectionForm postCollection={(title) => this.postCollection(title)} />
                     </div>
                 </div>
@@ -96,10 +109,16 @@ class App extends Component{
             return(
                 <div className="container-fluid" id="flashcardForm">
                     <div className="nav-wrapper">
-                        <NavBar collections={this.state.collections} createCollection={() => this.state.renderAction("collection form")} createFlashcard={() => this.renderAction("flashcard form")}/>
+                        <NavBar collections={this.state.collections} createCollection={() => this.renderAction("collection form")} createFlashcard={() => this.renderAction("flashcard form")}/>
                     </div>
-                    <div className="form-wrapper">
-                        <FlashcardForm postFlashcard={(flashcard) => this.postCollection(flashcard)} />
+                    <div className="flashcard-form-wrapper">
+                        <FlashcardForm postFlashcard={(flashcard) => this.postFlashcard(flashcard)} collections={this.state.collections}/>
+                        <div className="card-front">
+                            card
+                        </div>
+                        <div className="card-back">
+                            card
+                        </div>
                     </div>
                 </div>
             )
