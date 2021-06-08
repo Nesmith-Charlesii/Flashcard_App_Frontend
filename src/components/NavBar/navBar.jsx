@@ -27,7 +27,7 @@ const NavBar = (props) => {
             <div className="collections my-4">
                 <ul>
                     {props.collections.map(collection => {
-                        // Add conditional for id == 1
+                        // Add conditional for id == 1 to show active collection on load
                         return(
                             <li key={collection.id}><button onClick={() => props.getFlashcards(collection.id)}>{collection.title}</button></li>
                         )

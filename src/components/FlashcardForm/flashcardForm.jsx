@@ -22,9 +22,9 @@ const FlashcardForm = (props) => {
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <h4>Card Question</h4>
-                    <textarea className="form-control my-4" type="text" name="question" onChange={handleChange} value={inputs.question}/>
+                    <textarea className="form-control my-4" type="text" name="question" onChange={handleChange} onInput={props.cardFront} value={inputs.question}/>
                     <h4>Card Answer</h4>
-                    <textarea className="form-control my-4" type="text" name="answer" onChange={handleChange} value={inputs.answer}/>
+                    <textarea className="form-control my-4" type="text" name="answer" onChange={handleChange} onInput={props.cardBack} value={inputs.answer}/>
                     <br/>
                     <div className="select-collection">
                         <h4>Assign to Collection</h4>

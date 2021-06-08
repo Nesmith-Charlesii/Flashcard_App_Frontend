@@ -14,6 +14,7 @@ class App extends Component{
             collections: [],
             collection_id: 1,
             flashcards: [],
+            displayInput: '',
             renderType: "home"
         }
     }
@@ -72,6 +73,13 @@ class App extends Component{
         }
     }
 
+    handleDisplayChange = (event) => {
+        console.log(event.target.value)
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
     renderAction = (renderType) => {
         if(renderType === "collection form") {
             this.setState({renderType: "collection form"})
@@ -87,7 +95,7 @@ class App extends Component{
             return(
                 <div className="container-fluid">
                     <div className="nav-wrapper">
-                        <NavBar collections={this.state.collections} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} createCollection={() => this.renderAction("collection form")}  createFlashcard={() => this.renderAction("flashcard form")}/>
+                        <NavBar collections={this.state.collections} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} createCollection={() => this.renderAction("collection form")}  createFlashcard={() => this.renderAction("flashcard form")} flashcards={this.state.flashcards} />
                     </div>
                     <div className="flashcard-display-wrapper">
                         <FlashcardDisplay flashcards={this.state.flashcards} />
@@ -114,10 +122,10 @@ class App extends Component{
                     <div className="flashcard-form-wrapper">
                         <FlashcardForm postFlashcard={(flashcard) => this.postFlashcard(flashcard)} collections={this.state.collections}/>
                         <div className="card-front">
-                            card
+                            <input type="text" name="card-front" value={this.state.displayInput} onChange={event => this.handleDisplayChange(event)}></input>
                         </div>
                         <div className="card-back">
-                            card
+                            <input type="text" name="card-back" value={this.state.displayInput} onChange={event => this.handleDisplayChange(event)}></input>
                         </div>
                     </div>
                 </div>
