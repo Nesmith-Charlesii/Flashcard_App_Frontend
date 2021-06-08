@@ -5,18 +5,20 @@ const EditFlashcard = (props) => {
 
     const Submittal = () => {
 
-        const updateFlashcard = {
+        const flashcard = {
             question: inputs.question,
             answer: inputs.answer,
             collection: inputs.collectionId
         }
-        console.log(updateFlashcard)
+        console.log(flashcard.collection)
+        props.updateFlashcard(flashcard)
     }
 
     const {inputs, handleChange, handleSubmit} = useCollectionForm(Submittal);
     
     return (
         <div className="editFlashcardForm">
+            <h2>Update Flashcard</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <h4>Card Question</h4>
