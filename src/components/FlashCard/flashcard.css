@@ -28,13 +28,15 @@
     border: 2px outset rgb(115, 82, 233);
     box-shadow: 9px 8px 10px rgb(42, 35, 35);
     transform: rotateY(-180deg);
-    background-color: rgb(64, 45, 240);
+    opacity: .8;
+    background-color: rgb(17, 16, 16);
 }
 
 .card-side.front {
     border: 2px outset rgb(115, 82, 233); 
     box-shadow: 9px 8px 10px rgb(42, 35, 35);
-    background-color: transparent;
+    opacity: .8;
+    background-color: rgb(17, 16, 16);
 }
 
 .flashcard-carousel:hover .card-side.front {

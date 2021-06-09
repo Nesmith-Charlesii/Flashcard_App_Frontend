@@ -5,7 +5,8 @@ import CollectionForm from './CollectionForm/collectionForm';
 import FlashcardForm from './FlashcardForm/flashcardForm';
 import FlashcardDisplay from './FlashcardDisplay/flashcardDisplay';
 import EditFlashcard from './EditFlashcard/editFlashcard';
-import Flashcard from './FlashCard/flashCard';
+// import Flashcard from './FlashCard/flashCard';
+import FlashcardViewer from './FlashcardViewer/flashcardViewer';
 import 'bootstrap/dist/css/bootstrap.css';
 import './app.css';
 
@@ -17,6 +18,7 @@ class App extends Component{
             collection_id: 1,
             flashcards: [],
             flashcard_id: 0,
+            flashcard_number: 0,
             renderType: "home"
         }
     }
@@ -169,7 +171,7 @@ class App extends Component{
                         <NavBar collections={this.state.collections} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} createCollection={() => this.renderAction("collection form")}  createFlashcard={() => this.renderAction("flashcard form")} flashcards={this.state.flashcards} />
                     </div>
                     <div className="flashcard-carousel-wrapper">
-                        <Flashcard />
+                        <FlashcardViewer flashcard={this.state.flashcards[this.state.flashcard_number]} />
                     </div>
                 </div>
             )

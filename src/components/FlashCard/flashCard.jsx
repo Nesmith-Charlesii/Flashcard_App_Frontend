@@ -5,10 +5,10 @@ const Flashcard = (props) => {
     return (
         <div className = "flashcard-carousel">
             <div className = "card-side front">
-                <p>Front</p>
+                <p>{props.flashcard.question}</p>
             </div>
             <div className= "card-side back">
-                <p>Back</p>
+                <p>{props.flashcard.answer}</p>
             </div>
         </div>
     )
