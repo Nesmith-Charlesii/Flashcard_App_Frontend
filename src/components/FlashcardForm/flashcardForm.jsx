@@ -4,14 +4,13 @@ import './flashcardForm.css';
 
 const FlashcardForm = (props) => {
 
-    const [select, setSelect] = useState(1)
-    const [option, setOption] = useState("")
+    const [select, setSelect] = useState({})
 
     const Submittal = () => {
         const flashcard = {
             question: inputs.question,
             answer: inputs.answer,
-            collection: select
+            collection: select.collection
         }
         props.postFlashcard(flashcard)
         
@@ -21,15 +20,15 @@ const FlashcardForm = (props) => {
 
     const handleSelect = (e) => {
         console.log("SELECT!")
-        setSelect({
-            select: e.target.value,
-        })
+        //Target name attribute of select option. assign value to key 'name attribute'
+        //Make reference to value using select.collection (state.name)
+        setSelect(select => ({...select, [e.target.name]: e.target.value}))
     }
 
     //useEffect will execute after any changes in component
     //check that the value from the select option is correct after onClick event
     useEffect(() => {
-        console.log('select value', select)
+        console.log('select value', select.collection)
     })
 
     return (
