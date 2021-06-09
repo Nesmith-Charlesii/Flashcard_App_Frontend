@@ -7,11 +7,13 @@ const FlashcardForm = (props) => {
     const [select, setSelect] = useState({})
 
     const Submittal = () => {
+        //create flashcard object to pass as body for post request in 'postFlashcard' function
         const flashcard = {
             question: inputs.question,
             answer: inputs.answer,
             collection: select.collection
         }
+        //call 'postFlashcard' function in App component
         props.postFlashcard(flashcard)
         
     }
@@ -43,6 +45,7 @@ const FlashcardForm = (props) => {
                     <div className="select-collection">
                         <h4>Assign to Collection</h4>
                         <br/>
+                        {/* {onChange in 'select' tag monitors changes to options. use name or id for reference} */}
                         <select onChange={(e) => handleSelect(e)} name="collection">
                             {props.collections.map(collection => {
                                 return(
