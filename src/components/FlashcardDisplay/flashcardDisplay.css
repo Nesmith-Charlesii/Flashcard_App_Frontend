@@ -7,6 +7,20 @@
     grid-gap: 30px;
 }
 
+.begin-flashcard {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px inset white;
+    border-radius: 10%;
+    box-shadow: 10px 6px 12px rgb(50, 50, 50);
+    opacity: .9;
+    width: 250px;
+    height: 340px;
+}
+
 .flashcard {
     padding: 20px;
     display: flex;

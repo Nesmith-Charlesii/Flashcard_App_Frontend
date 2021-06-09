@@ -15,6 +15,10 @@
     background-image: linear-gradient(to top right, rgb(250, 40, 125), rgb(80, 20, 255));
 }
 
+#flashcardCarousel {
+    background-image: linear-gradient(to bottom right, rgb(238, 63, 63), rgb(106, 17, 250));
+}
+
 .nav-wrapper {
     width: 320px;
     height: 100vh;
@@ -47,6 +51,13 @@
 }
 
 .edit-flashcard-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.flashcard-carousel-wrapper {
     width: 100%;
     display: flex;
     align-items: center;

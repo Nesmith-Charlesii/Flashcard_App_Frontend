@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+
+.flashcard-carousel {
+    text-align: left;
+    /* border: 2px outset rgb(115, 82, 233); */
+    padding: 40px;
+    border-radius: 20px;
+    /* box-shadow: 9px 8px 10px rgb(42, 35, 35); */
+    height: 65vh;
+    width: 25vw;
+    perspective: 150rem;
+    position: relative;
+}
+
+.card-side{
+    height: 65vh;
+    width: 25vw;
+    color: white;
+    border-radius: 15px;
+    transition: all 0.8s ease;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card-side.back {
+    border: 2px outset rgb(115, 82, 233);
+    box-shadow: 9px 8px 10px rgb(42, 35, 35);
+    transform: rotateY(-180deg);
+    background-color: rgb(64, 45, 240);
+}
+
+.card-side.front {
+    border: 2px outset rgb(115, 82, 233); 
+    box-shadow: 9px 8px 10px rgb(42, 35, 35);
+    background-color: transparent;
+}
+
+.flashcard-carousel:hover .card-side.front {
+    transform: rotateY(180deg)
+}
+
+.flashcard-carousel:hover .card-side.back {
+    transform: rotateY(0deg)
+}

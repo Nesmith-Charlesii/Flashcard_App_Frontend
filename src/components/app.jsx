@@ -5,6 +5,7 @@ import CollectionForm from './CollectionForm/collectionForm';
 import FlashcardForm from './FlashcardForm/flashcardForm';
 import FlashcardDisplay from './FlashcardDisplay/flashcardDisplay';
 import EditFlashcard from './EditFlashcard/editFlashcard';
+import Flashcard from './FlashCard/flashCard';
 import 'bootstrap/dist/css/bootstrap.css';
 import './app.css';
 
@@ -97,6 +98,12 @@ class App extends Component{
         }, () => {console.log(this.state.flashcard_id)})
     }
 
+    studyFlashcards = () => {
+        this.setState({
+            renderType: "flashcard carousel"
+        })
+    }
+
     renderAction = (renderType) => {
         if(renderType === "collection form") {
             this.setState({renderType: "collection form"})
@@ -104,7 +111,10 @@ class App extends Component{
             this.setState({renderType: "flashcard form"})
         } else if(renderType === "edit flashcard form") {
             this.setState({renderType: "edit flashcard"})
-        } else {
+        } else if(this.state.renderType === "flashcard carousel") {
+            this.setState({renderType: "flashcard carousel"})
+        } 
+        else {
             this.setState({renderType: "home"})
         }
         // console.log('changing render type to collection form')
@@ -151,6 +161,19 @@ class App extends Component{
                 </div>
             )
         } 
+        //FLASHCARD CAROUSEL RENDER TYPE
+        else if(this.state.renderType === "flashcard carousel") {
+            return(
+                <div className="container-fluid" id="flashcardCarousel">
+                    <div className="nav-wrapper">
+                        <NavBar collections={this.state.collections} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} createCollection={() => this.renderAction("collection form")}  createFlashcard={() => this.renderAction("flashcard form")} flashcards={this.state.flashcards} />
+                    </div>
+                    <div className="flashcard-carousel-wrapper">
+                        <Flashcard />
+                    </div>
+                </div>
+            )
+        }
         // HOMEPAGE RENDER TYPE
         else {
             return(
@@ -159,7 +182,7 @@ class App extends Component{
                         <NavBar collections={this.state.collections} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} createCollection={() => this.renderAction("collection form")}  createFlashcard={() => this.renderAction("flashcard form")} flashcards={this.state.flashcards} />
                     </div>
                     <div className="flashcard-display-wrapper">
-                        <FlashcardDisplay flashcards={this.state.flashcards} editFlashcard={(flashcardId) => this.editFlashcard(flashcardId)} />
+                        <FlashcardDisplay flashcards={this.state.flashcards} editFlashcard={(flashcardId) => this.editFlashcard(flashcardId)} flashcardCarousel = {() => this.studyFlashcards()} />
                     </div>
                 </div>
             )
