@@ -46,7 +46,14 @@
     justify-content: space-around;
 }
 
-.card-front {
+.edit-flashcard-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* .card-front {
     height: 400px;
     width: 300px;
     border: 1px solid black;
@@ -72,5 +79,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 

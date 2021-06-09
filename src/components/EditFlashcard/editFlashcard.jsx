@@ -1,5 +1,6 @@
 import React from 'react';
 import useCollectionForm from '../CustomHooks/useCollectionForm';
+import './editFlashcard.css'; 
 
 const EditFlashcard = (props) => {
 
@@ -18,12 +19,11 @@ const EditFlashcard = (props) => {
     
     return (
         <div className="editFlashcardForm">
-            <h2>Update Flashcard</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <h4>Card Question</h4>
+                    <h4>Update Question</h4>
                     <textarea className="form-control my-4" type="text" name="question" onChange={handleChange} value={inputs.question}/>
-                    <h4>Card Answer</h4>
+                    <h4>Update Answer</h4>
                     <textarea className="form-control my-4" type="text" name="answer" onChange={handleChange} value={inputs.answer}/>
                     <br/>
                     <div className="select-collection">

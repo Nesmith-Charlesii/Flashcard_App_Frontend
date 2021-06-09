@@ -11,7 +11,7 @@ const FlashcardDisplay = (props) => {
                             <p>{flashcard.question}</p>
                         </div>
                         <div className="editButton">
-                            <button onClick={() => props.editFlashcard(flashcard.id)}>Edit</button>
+                            <button onClick={() =>props.editFlashcard(flashcard.id)}>Edit</button>
                         </div>
                         <div className="flash-answer">
                             <p>{flashcard.answer}</p>

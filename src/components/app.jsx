@@ -15,6 +15,7 @@ class App extends Component{
             collections: [],
             collection_id: 1,
             flashcards: [],
+            flashcard_id: 0,
             renderType: "home"
         }
     }
@@ -73,20 +74,21 @@ class App extends Component{
         }
     }
 
-    // updateFlashcard = async(flaschcardId) => {
-    //     try {
-    //         let {data} = await axios.put(`http://127.0.0.1:8000/flashcard_app/api/flashcard/${flaschcardId}/`)
-    //     }
-    //     catch(error) {
-    //         alert(`Whoops! ${error}. Looks like we're having some technical difficulties.Try again later!`)
-    //     }
-    // }
+    updateFlashcard = async(flaschcardId) => {
+        try {
+            let {data} = await axios.put(`http://127.0.0.1:8000/flashcard_app/api/flashcard/${flaschcardId}/`)
+            console.log(data)
+        }
+        catch(error) {
+            alert(`Whoops! ${error}. Looks like we're having some technical difficulties.Try again later!`)
+        }
+    }
 
     editFlashcard = (id) => {
-        let flashcardId = id
         this.setState({
-            renderType: "edit flashcard form"
-        })
+            renderType: "edit flashcard form",
+            flashcard_id: id
+        }, () => {console.log(this.state.flashcard_id)})
     }
 
     renderAction = (renderType) => {
@@ -94,7 +96,7 @@ class App extends Component{
             this.setState({renderType: "collection form"})
         } else if(renderType === "flashcard form") {
             this.setState({renderType: "flashcard form"})
-        } else if(renderType === "edit flashcard") {
+        } else if(renderType === "edit flashcard form") {
             this.setState({renderType: "edit flashcard"})
         } else {
             this.setState({renderType: "home"})
@@ -138,7 +140,7 @@ class App extends Component{
                         <NavBar collections={this.state.collections} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} createCollection={() => this.renderAction("collection form")}  createFlashcard={() => this.renderAction("flashcard form")} flashcards={this.state.flashcards} />
                     </div>
                     <div className="edit-flashcard-wrapper">
-                        <EditFlashcard collections={this.state.collections}/>
+                        <EditFlashcard collections={this.state.collections} updateFlashcard={flashcard => this.updateFlashcard(flashcard)} />
                     </div>
                 </div>
             )
