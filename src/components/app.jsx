@@ -106,7 +106,7 @@ class App extends Component{
         })
     }
 
-    goToNextBook() {
+    goToNextFlashcard() {
         let tempFlashcardNumber = this.state.flashcard_number;
         tempFlashcardNumber++;
         console.log(this.state)
@@ -119,7 +119,7 @@ class App extends Component{
         console.log(this.setState);
     }
 
-    goToPreviousBook() {
+    goToPreviousFlashcard() {
         let tempFlashcardNumber = this.state.flashcard_number;
         tempFlashcardNumber--;
         if(tempFlashcardNumber < 0) {
@@ -193,7 +193,7 @@ class App extends Component{
                         <NavBar collections={this.state.collections} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} createCollection={() => this.renderAction("collection form")}  createFlashcard={() => this.renderAction("flashcard form")} flashcards={this.state.flashcards} />
                     </div>
                     <div className="flashcard-carousel-wrapper">
-                        <FlashcardViewer flashcard={this.state.flashcards[this.state.flashcard_number]} nextBook={() => this.goToNextBook()} previousBook = {() => this.goToPreviousBook()}/>
+                        <FlashcardViewer flashcard={this.state.flashcards[this.state.flashcard_number]} nextFlashcard={() => this.goToNextFlashcard()} previousFlashcard = {() => this.goToPreviousFlashcard()}/>
                     </div>
                 </div>
             )
