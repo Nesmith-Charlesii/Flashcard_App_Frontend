@@ -7,7 +7,7 @@ const FlashcardDisplay = (props) => {
         <div className="card-display my-3">
             <div className="begin-flashcard">
                 <div className="play-buttoon">
-                    <button onClick={() => props.flashcardCarousel()}><i id="playButton" class="fas fa-play-circle fa-10x"></i></button>
+                    <button id="playButton" onClick={() => props.flashcardCarousel()}><i id="playButton" class="fas fa-play-circle fa-10x"></i></button>
                 </div>
             </div>
             {props.flashcards.map(flashcard => {

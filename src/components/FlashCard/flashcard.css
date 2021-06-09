@@ -44,6 +44,7 @@
     opacity: .8;
     background-color: rgb(17, 16, 16);
     display: flex;
+    justify-content: center;
     align-items: center;
     font-size: 34px;
     padding: 22px;

@@ -73,3 +73,7 @@
     color: white;
 }
 
+#playButton:hover {
+    color: yellow;
+}
+

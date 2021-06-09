@@ -29,7 +29,7 @@ const NavBar = (props) => {
                     {props.collections.map(collection => {
                         // Add conditional for id == 1 to show active collection on load
                         return(
-                            <li key={collection.id}><button onClick={() => props.getFlashcards(collection.id)}>{collection.title}</button></li>
+                            <li key={collection.id}><button id="collectionButton" onClick={() => props.getFlashcards(collection.id)}>{collection.title}</button></li>
                         )
                     })}
                 </ul>

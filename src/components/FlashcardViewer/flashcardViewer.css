@@ -5,3 +5,10 @@
     align-items: center;
 }
 
+#previousButton:hover {
+    color: yellow;
+}
+
+#nextButton:hover {
+    color: yellow;
+}
