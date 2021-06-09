@@ -18,6 +18,7 @@ class App extends Component{
             collection_id: 1,
             flashcards: [],
             flashcard_id: 0,
+            flashcard_count: Number,
             flashcard_number: 0,
             renderType: "home"
         }
@@ -45,9 +46,8 @@ class App extends Component{
             let {data} = await axios.get(`http://127.0.0.1:8000/flashcard_app/api/collection/${collection_id}/flashcards/`)
             this.setState({
                 flashcards: data,
-                renderType: "home"
+                renderType: "home",
             })
-            console.log(this.state.flashcards)
         }
         catch(error) {
             alert(`Whoops! ${error}. Looks like we're having some technical difficulties.Try again later!`)
