@@ -5,7 +5,6 @@ import './editFlashcard.css';
 const EditFlashcard = (props) => {
 
     const Submittal = () => {
-
         const flashcard = {
             question: inputs.question,
             answer: inputs.answer,
@@ -38,7 +37,7 @@ const EditFlashcard = (props) => {
                         </select>
                     </div>
                     <br/>
-                    <button className="btn btn-primary my-4" id="flashcard-button">Create Flashcard</button>
+                    <button className="btn btn-primary my-4" id="flashcard-button">Update Flashcard</button>
                 </div>
             </form>
         </div>

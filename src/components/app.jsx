@@ -74,9 +74,11 @@ class App extends Component{
         }
     }
 
-    updateFlashcard = async(flaschcardId) => {
+    updateFlashcard = async(flashcard) => {
+        console.log('update flashcard execute', flashcard)
+        console.log('flashcard id', this.state.flashcard_id)
         try {
-            let {data} = await axios.put(`http://127.0.0.1:8000/flashcard_app/api/flashcard/${flaschcardId}/`)
+            let {data} = await axios.put(`http://127.0.0.1:8000/flashcard_app/api/flashcard/${this.state.flashcard_id}/`, flashcard)
             console.log(data)
         }
         catch(error) {
