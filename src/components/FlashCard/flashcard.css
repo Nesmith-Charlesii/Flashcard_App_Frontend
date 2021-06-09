@@ -30,13 +30,23 @@
     transform: rotateY(-180deg);
     opacity: .8;
     background-color: rgb(17, 16, 16);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    padding: 22px;
 }
 
 .card-side.front {
+    text-align: center;
     border: 2px outset rgb(115, 82, 233); 
     box-shadow: 9px 8px 10px rgb(42, 35, 35);
     opacity: .8;
     background-color: rgb(17, 16, 16);
+    display: flex;
+    align-items: center;
+    font-size: 34px;
+    padding: 22px;
 }
 
 .flashcard-carousel:hover .card-side.front {

@@ -106,6 +106,30 @@ class App extends Component{
         })
     }
 
+    goToNextBook() {
+        let tempFlashcardNumber = this.state.flashcard_number;
+        tempFlashcardNumber++;
+        console.log(this.state)
+        if(tempFlashcardNumber === this.state.flashcards.length) {
+            tempFlashcardNumber = 0;
+        }
+        this.setState({
+            flashcard_number: tempFlashcardNumber
+        });
+        console.log(this.setState);
+    }
+
+    goToPreviousBook() {
+        let tempFlashcardNumber = this.state.flashcard_number;
+        tempFlashcardNumber--;
+        if(tempFlashcardNumber < 0) {
+            tempFlashcardNumber = this.state.flashcards.length - 1;
+        }
+        this.setState({
+            flashcard_number: tempFlashcardNumber
+        });
+    }
+
     renderAction = (renderType) => {
         if(renderType === "collection form") {
             this.setState({renderType: "collection form"})
@@ -119,8 +143,6 @@ class App extends Component{
         else {
             this.setState({renderType: "home"})
         }
-        // console.log('changing render type to collection form')
-        // this.setState({renderType: "collection form"})
     }
 
     render() {
@@ -171,7 +193,7 @@ class App extends Component{
                         <NavBar collections={this.state.collections} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} createCollection={() => this.renderAction("collection form")}  createFlashcard={() => this.renderAction("flashcard form")} flashcards={this.state.flashcards} />
                     </div>
                     <div className="flashcard-carousel-wrapper">
-                        <FlashcardViewer flashcard={this.state.flashcards[this.state.flashcard_number]} />
+                        <FlashcardViewer flashcard={this.state.flashcards[this.state.flashcard_number]} nextBook={() => this.goToNextBook()} previousBook = {() => this.goToPreviousBook()}/>
                     </div>
                 </div>
             )

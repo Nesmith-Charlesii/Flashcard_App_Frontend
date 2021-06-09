@@ -61,34 +61,6 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-}
-
-/* .card-front {
-    height: 400px;
-    width: 300px;
-    border: 1px solid black;
-    border-radius: 10px;
-    border: 2px outset rgb(115, 82, 233);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 9px 8px 10px rgb(42, 35, 35);
-    display: flex;
     justify-content: center;
-    align-items: center;
 }
-
-.card-back {
-    height: 400px;
-    width: 300px;
-    border: 1px solid black;
-    border-radius: 10px;
-    border: 2px outset rgb(115, 82, 233);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 9px 8px 10px rgb(42, 35, 35);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
 
