@@ -1,21 +1,36 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import useCollectionForm from '../CustomHooks/useCollectionForm';
 import './flashcardForm.css';
 
 const FlashcardForm = (props) => {
 
+    const [select, setSelect] = useState(1)
+    const [option, setOption] = useState("")
+
     const Submittal = () => {
         const flashcard = {
             question: inputs.question,
             answer: inputs.answer,
-            collection: inputs.collectionId
+            collection: select
         }
-        console.log(flashcard.collection)
         props.postFlashcard(flashcard)
         
     }
 
     const {inputs, handleChange, handleSubmit} = useCollectionForm(Submittal);
+
+    const handleSelect = (e) => {
+        console.log("SELECT!")
+        setSelect({
+            select: e.target.value,
+        })
+    }
+
+    //useEffect will execute after any changes in component
+    //check that the value from the select option is correct after onClick event
+    useEffect(() => {
+        console.log('select value', select)
+    })
 
     return (
         <div className="flashcardForm">
@@ -29,10 +44,10 @@ const FlashcardForm = (props) => {
                     <div className="select-collection">
                         <h4>Assign to Collection</h4>
                         <br/>
-                        <select onChange={handleChange} name="collection">
+                        <select onChange={(e) => handleSelect(e)} name="collection">
                             {props.collections.map(collection => {
                                 return(
-                                    <option key={collection.id}  value={inputs.collectionId=collection.id}>{collection.title}</option>
+                                    <option key={collection.id} value={collection.id}>{collection.title}</option>
                                 )
                             })}
                         </select>

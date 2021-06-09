@@ -65,7 +65,7 @@ class App extends Component{
         console.log('post flashcard execute', flashcard)
         try {
             let {data} = await axios.post('http://127.0.0.1:8000/flashcard_app/api/collection/1/flashcards/', flashcard)
-            console.log('flashcard', data)
+            console.log('flashcard posting', data)
             this.setState({flashcards: [...this.state.flashcards, data]})
             console.log(this.state.flashcards);
         }
@@ -87,6 +87,7 @@ class App extends Component{
     }
 
     editFlashcard = (id) => {
+        //this.setState is an async function. add an anon function after dict of state variables to see state change immediately 
         this.setState({
             renderType: "edit flashcard form",
             flashcard_id: id
