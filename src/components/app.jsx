@@ -52,6 +52,8 @@ class App extends Component{
                     flashcards: data,
                     renderType: "home",
                 })
+            } else {
+                console.log("no flashcard to retrieve")
             }
         }
         catch(error) {
