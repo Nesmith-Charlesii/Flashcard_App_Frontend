@@ -158,7 +158,7 @@ class App extends Component{
             return(
                 <div className="container-fluid" id="collectionForm">
                     <div className="nav-wrapper">
-                        <NavBar collections={this.state.collections} createCollection={() => this.renderAction("collection form")} createFlashcard={() => this.renderAction("flashcard form")} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)}/>
+                        <NavBar collections={this.state.collections} createCollection={() => this.renderAction("collection form")} createFlashcard={() => this.renderAction("flashcard form")} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} home={() => this.renderAction("home")}/>
                     </div>
                     <div className="collection-form-wrapper">
                         <CollectionForm postCollection={(title) => this.postCollection(title)} />
@@ -171,7 +171,7 @@ class App extends Component{
             return(
                 <div className="container-fluid" id="flashcardForm">
                     <div className="nav-wrapper">
-                        <NavBar collections={this.state.collections} createCollection={() => this.renderAction("collection form")} createFlashcard={() => this.renderAction("flashcard form")} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)}/>
+                        <NavBar collections={this.state.collections} createCollection={() => this.renderAction("collection form")} createFlashcard={() => this.renderAction("flashcard form")} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} home={() => this.renderAction("home")}/>
                     </div>
                     <div className="flashcard-form-wrapper">
                         <FlashcardForm postFlashcard={(flashcard) => this.postFlashcard(flashcard)} collections={this.state.collections}/>
@@ -184,7 +184,7 @@ class App extends Component{
             return(
                 <div className="container-fluid" id = "editFlashcard">
                     <div className="nav-wrapper">
-                        <NavBar collections={this.state.collections} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} createCollection={() => this.renderAction("collection form")}  createFlashcard={() => this.renderAction("flashcard form")} flashcards={this.state.flashcards} />
+                        <NavBar collections={this.state.collections} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} createCollection={() => this.renderAction("collection form")}  createFlashcard={() => this.renderAction("flashcard form")} flashcards={this.state.flashcards} home={() => this.renderAction("home")}/>
                     </div>
                     <div className="edit-flashcard-wrapper">
                         <EditFlashcard collections={this.state.collections} updateFlashcard={flashcard => this.updateFlashcard(flashcard)} />
@@ -197,7 +197,7 @@ class App extends Component{
             return(
                 <div className="container-fluid" id="flashcardCarousel">
                     <div className="nav-wrapper">
-                        <NavBar collections={this.state.collections} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} createCollection={() => this.renderAction("collection form")}  createFlashcard={() => this.renderAction("flashcard form")} flashcards={this.state.flashcards} />
+                        <NavBar collections={this.state.collections} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} createCollection={() => this.renderAction("collection form")}  createFlashcard={() => this.renderAction("flashcard form")} flashcards={this.state.flashcards} home={() => this.renderAction("home")}/>
                     </div>
                     <div className="flashcard-carousel-wrapper">
                         <FlashcardViewer flashcard={this.state.flashcards[this.state.flashcard_number]} nextFlashcard={() => this.goToNextFlashcard()} previousFlashcard = {() => this.goToPreviousFlashcard()}/>
@@ -210,7 +210,7 @@ class App extends Component{
             return(
                 <div className="container-fluid">
                     <div className="nav-wrapper">
-                        <NavBar collections={this.state.collections} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} createCollection={() => this.renderAction("collection form")}  createFlashcard={() => this.renderAction("flashcard form")} flashcards={this.state.flashcards} />
+                        <NavBar collections={this.state.collections} getFlashcards={(collection_id) => this.getCollectionFlashcards(collection_id)} createCollection={() => this.renderAction("collection form")}  createFlashcard={() => this.renderAction("flashcard form")} flashcards={this.state.flashcards} home={() => this.renderAction("home")}/>
                     </div>
                     <div className="flashcard-display-wrapper">
                         <FlashcardDisplay flashcards={this.state.flashcards} editFlashcard={(flashcardId) => this.editFlashcard(flashcardId)} flashcardCarousel = {() => this.studyFlashcards()} />

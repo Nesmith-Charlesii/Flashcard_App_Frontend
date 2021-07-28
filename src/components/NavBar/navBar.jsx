@@ -7,10 +7,10 @@ const NavBar = (props) => {
         <nav className="nav-container">
             <div className="page-direct">
                 <div className="return">
-                    <p><i className="fas fa-arrow-circle-left fa-2x"></i></p>
+                    <i className="fas fa-arrow-circle-left fa-2x" onClick={props.return}></i>
                 </div>
                 <div className="home">
-                    <p><i className="fas fa-home fa-2x"></i></p>
+                    <button onClick={props.home}><i className="fas fa-home fa-2x"></i></button>
                 </div>
             </div>
             <div className="model-creations">
