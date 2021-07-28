@@ -32,8 +32,11 @@ class App extends Component{
     getAllCollections = async() => {
         try {
             let {data} = await axios.get(`http://127.0.0.1:8000/flashcard_app/api/collections/`)
-            console.log(data)
-            this.setState({collections:data})
+            if(data) {
+                this.setState({collections:data})
+            } else {
+                console.log("no collections to retrieve")
+            }
         }
         catch(error) {
             alert(`Whoops! ${error}. Looks like we're having some technical difficulties.Try again later!`)
@@ -44,10 +47,12 @@ class App extends Component{
         console.log('getting flashcards')
         try {
             let {data} = await axios.get(`http://127.0.0.1:8000/flashcard_app/api/collection/${collection_id}/flashcards/`)
-            this.setState({
-                flashcards: data,
-                renderType: "home",
-            })
+            if(data) {
+                this.setState({
+                    flashcards: data,
+                    renderType: "home",
+                })
+            }
         }
         catch(error) {
             alert(`Whoops! ${error}. Looks like we're having some technical difficulties.Try again later!`)
