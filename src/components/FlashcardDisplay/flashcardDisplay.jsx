@@ -12,7 +12,7 @@ const FlashcardDisplay = (props) => {
             </div>
             {props.flashcards.map(flashcard => {
                 return (
-                    <div className="flashcard" key={flashcard.id}>
+                    <div className="flashcard" key={flashcard.id || Math.random()}>
                         <div className="flash-question">
                             <p>{flashcard.question}</p>
                         </div>

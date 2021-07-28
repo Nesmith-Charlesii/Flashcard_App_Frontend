@@ -16,7 +16,7 @@ class App extends Component{
         this.state = {
             collections: [],
             collection_id: 1,
-            flashcards: [],
+            flashcards: [0],
             flashcard_id: 0,
             flashcard_count: Number,
             flashcard_number: 0,
