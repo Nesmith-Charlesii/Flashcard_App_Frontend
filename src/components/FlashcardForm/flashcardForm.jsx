@@ -21,7 +21,6 @@ const FlashcardForm = (props) => {
     const {inputs, handleChange, handleSubmit} = useCollectionForm(Submittal);
 
     const handleSelect = (e) => {
-        console.log("SELECT!")
         //Target name attribute of select option. assign value to key 'name attribute'
         //Make reference to value using select.collection (state.name)
         setSelect(select => ({...select, [e.target.name]: e.target.value}))
@@ -30,8 +29,8 @@ const FlashcardForm = (props) => {
     //useEffect will execute after any changes in component
     //check that the value from the select option is correct after onClick event
     useEffect(() => {
-        console.log('select value', select.collection)
-    })
+        console.log('select collection', select.collection)
+    }, [select])
 
     return (
         <div className="flashcardForm">
@@ -47,6 +46,7 @@ const FlashcardForm = (props) => {
                         <br/>
                         {/* {onChange in 'select' tag monitors changes to options. use name or id for reference} */}
                         <select onChange={(e) => handleSelect(e)} name="collection">
+                            <option value="Select a collection">Select a collection</option>
                             {props.collections.map(collection => {
                                 return(
                                     <option key={collection.id} value={collection.id}>{collection.title}</option>

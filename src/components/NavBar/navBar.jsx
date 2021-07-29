@@ -7,7 +7,7 @@ const NavBar = (props) => {
         <nav className="nav-container">
             <div className="page-direct">
                 <div className="return">
-                    <i className="fas fa-arrow-circle-left fa-2x" onClick={props.return}></i>
+                    <button onClick={() => window.history.back()}><i className="fas fa-arrow-circle-left fa-2x" ></i></button>
                 </div>
                 <div className="home">
                     <button onClick={props.home}><i className="fas fa-home fa-2x"></i></button>

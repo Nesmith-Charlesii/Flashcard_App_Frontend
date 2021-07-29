@@ -16,7 +16,7 @@ class App extends Component{
         this.state = {
             collections: [],
             collection_id: 1,
-            flashcards: [0],
+            flashcards: [],
             flashcard_id: 0,
             flashcard_count: Number,
             flashcard_number: 0,
@@ -123,7 +123,6 @@ class App extends Component{
         this.setState({
             flashcard_number: tempFlashcardNumber
         });
-        console.log(this.setState);
     }
 
     goToPreviousFlashcard() {
